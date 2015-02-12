@@ -3,16 +3,16 @@
         "version": "2.4",
         "website": "http://www.ezservermonitor.com",
         "check_updates": true,
-        "auto_refresh": 0
+        "auto_refresh": 60
     },
     "disk": {
         "show_tmpfs": false
     },
     "ping": {
         "hosts": [
-            "facebook.com",
-            "google.com",
-            "yahoo.com"
+            "amazon.com",
+            "github.com",
+            "dockerhub.com"
         ]
     },
     "last_login": {
