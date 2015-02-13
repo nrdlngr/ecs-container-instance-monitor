@@ -10,10 +10,12 @@ if (count($Config->get('services')) > 0)
     foreach ($Config->get('services') as $service)
     {
         $host = $service['host'];
-        $sock = @fsockopen($host, $service['port'], $num, $error, 5);
+        $command = $service['command'];
+        $expected_response = $service['expected_response'];
         
-        if ($sock)
-        {
+        exec("$command", $output, $return);
+		if (strpos($output, $expected_response) !== FALSE)
+			{
             $datas[] = array(
                 'port'      => $service['port'],
                 'name'      => $service['name'],
@@ -21,15 +23,15 @@ if (count($Config->get('services')) > 0)
             );
             
             fclose($sock);
-        }
-        else
-        {
+        	}
+		else
+			{
             $datas[] = array(
                 'port'      => $service['port'],
                 'name'      => $service['name'],
                 'status'    => 0,
             );
-        }
+        	}
     }
 }
 
