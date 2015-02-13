@@ -22,22 +22,30 @@
         {
             "name": "Web Server",
             "host": "localhost",
-            "port": 80
+            "port": 80,
+            "command": "service apache2 status",
+            "expected_response": "apache2 is running"
         },
         {
             "name": "Docker",
             "host": "unix:///var/run/docker.sock",
-            "port": -1
+            "port": -1,
+            "command": "status docker",
+            "expected_response": "docker start/running"
         },
         {
             "name": "Amazon ECS Container Agent",
             "host": "localhost",
-            "port": 51678
+            "port": 51678,
+            "command": "status ecs",
+            "expected_response": "ecs start/running"          
         },
         {
             "name": "SSH Service",
             "host": "localhost",
-            "port": 22
-        }        
+            "port": 22,
+            "command": "status ssh",
+            "expected_response": "ssh start/running"
+        }
     ]
 }
