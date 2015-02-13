@@ -25,29 +25,19 @@
             "port": 80
         },
         {
-            "name": "Email Server (incoming)",
-            "host": "localhost",
-            "port": 993
+            "name": "Docker",
+            "host": "unix:///var/run/docker.sock",
+            "port": -1
         },
         {
-            "name": "Email Server (outgoing)",
+            "name": "Amazon ECS Container Agent",
             "host": "localhost",
-            "port": 587
-        },
-        {
-            "name": "FTP Server",
-            "host": "localhost",
-            "port": 21
-        },
-        {
-            "name": "Database Server",
-            "host": "localhost",
-            "port": 3306
+            "port": 51678
         },
         {
             "name": "SSH Service",
             "host": "localhost",
             "port": 22
-        }
+        }        
     ]
 }
