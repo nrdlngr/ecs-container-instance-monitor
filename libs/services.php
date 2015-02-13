@@ -14,16 +14,8 @@ if (count($Config->get('services')) > 0)
         $expected_response = $service['expected_response'];
         
         exec("$command", $output, $return);
-		$pos = strpos($output, $expected_response)
+		$pos = strpos($output, $expected_response);
 		if ($pos === false)
-			{
-            $datas[] = array(
-                'port'      => $service['port'],
-                'name'      => $service['name'],
-                'status'    => 1,
-            );
-        	}
-		else
 			{
             $datas[] = array(
                 'port'      => $service['port'],
@@ -31,6 +23,15 @@ if (count($Config->get('services')) > 0)
                 'status'    => 0,
             );
         	}
+		else
+			{
+            $datas[] = array(
+                'port'      => $service['port'],
+                'name'      => $service['name'],
+                'status'    => 1,
+            );
+        	}
+        unset($output);
     }
 }
 
