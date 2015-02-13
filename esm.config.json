@@ -29,12 +29,12 @@
         {
             "name": "Docker",
             "host": "unix:///var/run/docker.sock",
-            "port": -1,
+            "port": "n/a",
             "command": "status docker",
             "expected_response": "docker start/running"
         },
         {
-            "name": "Amazon ECS Container Agent",
+            "name": "ECS Container Agent",
             "host": "localhost",
             "port": 51678,
             "command": "status ecs",
